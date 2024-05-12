@@ -1,35 +1,47 @@
 import { useParams } from 'react-router-dom';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
 import { ResultContext } from '../../../context/ResultContext'
 
 function Details() {
     const { result } = useContext(ResultContext);
     const movieID = useParams();
-
-    const [isFavorite, setIsFavorite] = useState(false); // Estado para controlar si la película está marcada como favorita
+    const [isFavorite, setIsFavorite] = useState(false);
 
     let movieDetails = null;
 
     if (movieID && result) {
-        console.log(`Aquí está tu ID: ${movieID.id}`);
-        console.log(`Aquí están tus resultados: `, result);
-
         [movieDetails] = result.filter(item => item.id == movieID.id);
     }
     else {
-        console.log("Algún dato (movieID o resultados de búsqueda) no ha sido recibido");
+        console.log("Algún dato no ha sido recibido");
     }
 
     let url = "https://image.tmdb.org/t/p/w500";
 
-    const handleFavoriteToggle = () => {
+    const handleFavoriteToggle = async () => {
         setIsFavorite(!isFavorite);
-        if (isFavorite) {
-            // Si la peli está marcada como favorita, enviar datos a mongo
-            console.log("Película marcada como favorita:", movieDetails);
+        if (!isFavorite) {
+            try {
+                const response = await axios.post('http://localhost:3000/api/',
+                    {
+                        "id": movieDetails.id,
+                        "title": movieDetails.title,
+                        "poster_path": movieDetails.poster_path,
+                        "release_date": movieDetails.release_date
+                    }
+                );
+                if (response.status === 201) {
+                    console.log('Película marcada como favorita correctamente');
+                } else {
+                    console.error('Error al marcar la película como favorita');
+                }
+            } catch (error) {
+                console.error('Error al marcar la película como favorita:', error);
+            }
         } else {
             // Si la película no está marcada como favorita, la eliminamos de la base de datos
-            console.log("Película eliminada de favoritos:", movieDetails);
+            console.log("Implementar logica para eliminar pelicula de favoritos");
         }
     };
 

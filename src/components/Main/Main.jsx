@@ -5,6 +5,7 @@ import Signup from "./Signup/Signup"
 import Details from "./Details/Details"
 import About from "./About/About"
 import Contact from "./Contact/Contact"
+import Favorites from "./Favorites/Favorites"
 
 function Main() {
     return (
@@ -14,6 +15,7 @@ function Main() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/item/:id" element={<Details />} />
+                <Route path="/favorites" element={<Favorites />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/*" element={<Navigate to={"/"} />} />

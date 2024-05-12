@@ -12,7 +12,7 @@ function Header() {
                 </Link>
             </div>
 
-            <h2 className="login"><Link to='/login'>Favorites</Link></h2>
+            <h2 className="login"><Link to='/favorites'>Favorites</Link></h2>
        </header>
     )
 }
