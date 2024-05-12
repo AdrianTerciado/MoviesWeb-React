@@ -1,0 +1,33 @@
+.index-text{
+    color: rgb(216, 216, 216);
+    font-size: 1.5rem;
+    margin: 40px 15px;
+}
+
+.input-search{
+    background-color: rgb(36, 38, 78);
+    color: white;
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border:none;
+    text-align: center;
+    position: sticky;
+    top: 56px;
+    z-index: 1;
+}
+
+.input-search:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .index-text{
+        color: rgb(186, 186, 186);
+        font-size: 3rem;
+        margin: 40px 20px;
+        
+    }
+}    
