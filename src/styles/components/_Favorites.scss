@@ -1,0 +1,10 @@
+.results-favorites {
+    display: flex;
+    flex-direction: column;
+
+    &>.results-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
