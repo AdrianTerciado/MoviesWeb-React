@@ -6,6 +6,7 @@ function Search() {
     const { result, updateResult } = useContext(ResultContext);
     const [contador, setContador] = useState(0);
     const [search, setSearch] = useState(null);
+    const [genre, setGenre] = useState(null)
 
     function handleChange(e) {
 
@@ -21,24 +22,47 @@ function Search() {
 
     useEffect(() => {
         const getMovie = async () => {
-            if (!search) {
-                console.log("No hay búsqueda");
-            }
-            else {
+            if (search) {
                 const resp = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${import.meta.env.VITE_API_KEY}&query=${search}`);
                 const data = await resp.json();
                 console.log(data);
                 updateResult(data.results);
-                console.log({result});
+                console.log({ result });
+            }
+            else if (genre) {
+                const resp = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${genre}`);
+                const data = await resp.json();
+                console.log(data);
+                updateResult(data.results);
+                console.log({ result });
+            } else {
+                console.log("No hay búsqueda");
             }
         }
         getMovie();
-    }, [search]);
+    }, [search, genre]);
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(e.target.genre.value);
+        setGenre(e.target.genre.value);
+        console.log(genre);
+    }
 
     return (
         <>
             <h1 className="index-text">What would you like to watch today?</h1>
             <input type="text" className="input-search" placeholder="What do you want to watch?" onChange={handleChange} />
+            <form onSubmit={handleSubmit}>
+                <label className='filter-label' htmlFor="genre">Select by genre:</label>
+                <select className="filter-search" id="genre" name="genre">
+                    <option value="28">Action</option>
+                    <option value="12">Adventure</option>
+                    <option value="16">Animation</option>
+                    <option value="35">Comedy</option>
+                </select>
+                <input type="submit" className='submit-button'  />
+            </form>
         </>
     )
 }
