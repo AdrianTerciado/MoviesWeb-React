@@ -2,19 +2,21 @@ import { useParams } from 'react-router-dom';
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { ResultContext } from '../../../context/ResultContext'
+import { MongoContext } from '../../../context/MongoContext'
 
 function Details() {
     const { result } = useContext(ResultContext);
+    const { database } = useContext(MongoContext);
     const movieID = useParams();
     const [isFavorite, setIsFavorite] = useState(false);
 
     let movieDetails = null;
 
-    if (movieID && result) {
+    if (result.some(item => item.id == movieID.id)) {
         [movieDetails] = result.filter(item => item.id == movieID.id);
     }
     else {
-        console.log("Algún dato no ha sido recibido");
+        [movieDetails] = database.filter(item => item.id == movieID.id);
     }
 
     let url = "https://image.tmdb.org/t/p/w500";
@@ -28,7 +30,10 @@ function Details() {
                         "id": movieDetails.id,
                         "title": movieDetails.title,
                         "poster_path": movieDetails.poster_path,
-                        "release_date": movieDetails.release_date
+                        "release_date": movieDetails.release_date,
+                        "backdrop_path": movieDetails.backdrop_path,
+                        "overview": movieDetails.overview,
+                        "vote_average": movieDetails.vote_average
                     }
                 );
                 if (response.status === 201) {
@@ -40,8 +45,20 @@ function Details() {
                 console.error('Error al marcar la película como favorita:', error);
             }
         } else {
-            // Si la película no está marcada como favorita, la eliminamos de la base de datos
-            console.log("Implementar logica para eliminar pelicula de favoritos");
+            try {
+                const response = await axios.delete('http://localhost:3000/api/',
+                    {
+                        "id": movieDetails.id,
+                    }
+                );
+                if (response.status === 200) {
+                    console.log('Película barrada correctamente');
+                } else {
+                    console.error('Error al borrar la película de favoritos');
+                }
+            } catch (error) {
+                console.error('Error al borrar la película de favoritos:', error);
+            }
         }
     };
 
