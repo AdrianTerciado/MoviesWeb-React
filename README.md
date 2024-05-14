@@ -10,14 +10,19 @@ Formas de búsqueda:
 - Filtro por género: Simple, un select donde puedes hacer una llamada a la API y te trae películas por género.
 - El proyecto es didactico y sencillo pero perfectamente escalable, se le podrían añadir multitud de filtros u opciones de reordenación. Si tienes alguna propuesta de mejora, no dudes en lanzar un pull request.
 - Una vez pulsamos sobre cualquier pelicula nos manda a una vista de detalle donde podemos visualización los detalles más reseñables de las películas, también tenemos un botón para marcar esa película como favorita.
+
+![Captura de pantalla 2024-05-14 061145](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/704314b9-d636-44a7-94cb-e33276964d88)
+
+
 - Por último tenemos un apartado de favoritos donde podemos ver el listado de nuestras películas, aquellas que hemos ido marcando como tal.
 - Además se ha añadido paginación.
 
 ![image](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/27989461-25c3-4e25-99d4-aedd10b7a2f8)
 
 - Como veis es una interfaz intuitiva y amigable para el usuario. Se ha tratado de que sea responsive para que se adapte tanto a pantallas mobiles como a PC.
-  
-![Captura de pantalla 2024-05-14 053707](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/38fe65c6-d711-44b7-91b5-5dd186538d0c)
+
+![Captura de pantalla 2024-05-14 061221](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/d619d678-ba97-47d8-95fc-f2c65d526a36)
+
 
 ## Instalación
 Clona este repositorio en tu máquina local.
