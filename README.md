@@ -28,13 +28,13 @@ Formas de búsqueda:
 
 
 ## Instalación
-Clona este repositorio en tu máquina local.
-Navega hasta la carpeta del proyecto.
-Ejecuta npm install para instalar todas las dependencias.
-¡Recuerda! Necesitas obtener una clave de la web https://www.themoviedb.org/en para ponerla en el archivo .env 
-¡Recuerda de nuevo! Si quieres que funcione el guardado de favoritos, necesitas hacer funucionar también la parte del backend. 
-Ejecuta "npm run dev" para iniciar la aplicación en modo de desarrollo.
-Abre http://localhost:5173 para ver la aplicación en tu navegador.
+- Clona este repositorio en tu máquina local.
+- Navega hasta la carpeta del proyecto.
+- Ejecuta npm install para instalar todas las dependencias.
+- ¡Recuerda! Necesitas obtener una clave de la web https://www.themoviedb.org/en para ponerla en el archivo .env 
+- ¡Recuerda de nuevo! Si quieres que funcione el guardado de favoritos, necesitas hacer funucionar también la parte del backend. 
+- Ejecuta "npm run dev" para iniciar la aplicación en modo de desarrollo.
+- Abre http://localhost:5173 para ver la aplicación en tu navegador.
 
 ## Tecnologías Utilizadas
 - NodeJS como entorno de desarrollo
