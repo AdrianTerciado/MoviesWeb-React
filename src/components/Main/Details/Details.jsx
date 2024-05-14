@@ -46,11 +46,7 @@ function Details() {
             }
         } else {
             try {
-                const response = await axios.delete('http://localhost:3000/api/',
-                    {
-                        "id": movieDetails.id,
-                    }
-                );
+                const response = await axios.delete(`http://localhost:3000/api/${movieDetails.id}`);
                 if (response.status === 200) {
                     console.log('Película barrada correctamente');
                 } else {
