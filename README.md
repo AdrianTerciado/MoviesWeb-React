@@ -1,6 +1,8 @@
 # Movie App Frontend
 Este proyecto es la parte del frontend de una aplicación web para ver información sobre películas. Está construido con React y utiliza la API de TMDB para obtener la informaión. Además he construido en otro proyecto otra API REST, con la también nos conectamos, que conecta con una base de datos MongoDB para guardar un listado de tus películas favoritas.
 
+![Captura de pantalla 2024-05-14 053642](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/1e88ca7f-4327-42bb-9797-2ac659ea1818)
+
 ## Características
 Es una aplicación muy sencilloa, he buscado que la maquetación este bien cuidada pero que a la vez sea minimanilista.
 Formas de búsqueda:
@@ -9,7 +11,13 @@ Formas de búsqueda:
 - El proyecto es didactico y sencillo pero perfectamente escalable, se le podrían añadir multitud de filtros u opciones de reordenación. Si tienes alguna propuesta de mejora, no dudes en lanzar un pull request.
 - Una vez pulsamos sobre cualquier pelicula nos manda a una vista de detalle donde podemos visualización los detalles más reseñables de las películas, también tenemos un botón para marcar esa película como favorita.
 - Por último tenemos un apartado de favoritos donde podemos ver el listado de nuestras películas, aquellas que hemos ido marcando como tal.
-- Como veis es una interfaz intuitiva y amigable para el usuario.
+- Además se ha añadido paginación.
+
+![image](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/27989461-25c3-4e25-99d4-aedd10b7a2f8)
+
+- Como veis es una interfaz intuitiva y amigable para el usuario. Se ha tratado de que sea responsive para que se adapte tanto a pantallas mobiles como a PC.
+  
+![Captura de pantalla 2024-05-14 053707](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/38fe65c6-d711-44b7-91b5-5dd186538d0c)
 
 ## Instalación
 Clona este repositorio en tu máquina local.
