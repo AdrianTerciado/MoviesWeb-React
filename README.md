@@ -1,21 +1,24 @@
 # Movie App Frontend
-Este proyecto es la parte del frontend de una aplicación web para ver información sobre películas. Está construido con React y utiliza la API de TMDB para obtener la informaión. Además he construido en otro proyecto otra API REST, con la también nos conectamos, que conecta con una base de datos MongoDB para guardar un listado de tus películas favoritas.
+Este proyecto es la parte del frontend de una aplicación web Full Stack MERN para ver información sobre películas. Está construido con React y utiliza la API de TMDB para obtener la informaión. 
+
+La otra parte del proyecto es una API REST, con la también nos conectamos, que enlaza a una base de datos MongoDB para guardar un listado de tus películas favoritas. Te dejo el repositorio https://github.com/AdrianTerciado/MoviesWeb-ExpressMongo
 
 ![Captura de pantalla 2024-05-14 053642](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/1e88ca7f-4327-42bb-9797-2ac659ea1818)
 
 ## Características
-Es una aplicación muy sencilloa, he buscado que la maquetación este bien cuidada pero que a la vez sea minimanilista.
+Es una aplicación muy sencilla, he buscado que la maquetación este bien cuidada pero que a la vez sea minimanilista.
+
 Formas de búsqueda:
 - Por palabras clave: Tiene un input con un debouncer de 1 seg para no recargar de llamadas al servidor.
 - Filtro por género: Simple, un select donde puedes hacer una llamada a la API y te trae películas por género.
 - El proyecto es didactico y sencillo pero perfectamente escalable, se le podrían añadir multitud de filtros u opciones de reordenación. Si tienes alguna propuesta de mejora, no dudes en lanzar un pull request.
-- Una vez pulsamos sobre cualquier pelicula nos manda a una vista de detalle donde podemos visualización los detalles más reseñables de las películas, también tenemos un botón para marcar esa película como favorita.
+- Una vez pulsamos sobre cualquier pelicula nos manda a una vista de detalle donde podemos visualizar los características más reseñables de las películas, también tenemos un botón para marcar esa película como favorita.
 
 ![Captura de pantalla 2024-05-14 061145](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/704314b9-d636-44a7-94cb-e33276964d88)
 
 
-- Por último tenemos un apartado de favoritos donde podemos ver el listado de nuestras películas, aquellas que hemos ido marcando como tal.
-- Además se ha añadido paginación.
+- También tenemos un apartado de favoritos donde podemos ver el listado de nuestras películas, aquellas que hemos ido marcando como tal y que hemos ido guardando en la base de datos a través del backend.
+- Además se ha añadido paginación tanto desde el front para paginar lo que viene de la API de TMDB como desde el back para lo que traemos de nuestra propia base de datos. 
 
 ![image](https://github.com/AdrianTerciado/MoviesWeb-React/assets/158854133/27989461-25c3-4e25-99d4-aedd10b7a2f8)
 
@@ -29,7 +32,7 @@ Clona este repositorio en tu máquina local.
 Navega hasta la carpeta del proyecto.
 Ejecuta npm install para instalar todas las dependencias.
 ¡Recuerda! Necesitas obtener una clave de la web https://www.themoviedb.org/en para ponerla en el archivo .env 
-¡Recuerda de nuevo! Si quieres que funcione el guardado de favoritos, necesitas hacer funucionar también la parte del backend, te dejo el otro repo, echale un vistazo https://github.com/AdrianTerciado/MoviesWeb-ExpressMongo
+¡Recuerda de nuevo! Si quieres que funcione el guardado de favoritos, necesitas hacer funucionar también la parte del backend. 
 Ejecuta "npm run dev" para iniciar la aplicación en modo de desarrollo.
 Abre http://localhost:5173 para ver la aplicación en tu navegador.
 
