@@ -70,4 +70,18 @@
         margin: 40px 20px;
 
     }
+
+    .form{
+
+        z-index: 3;
+        .filter-label{
+            font-size: 1.4rem;
+        }    
+        .filter-search{
+            font-size: 1.1rem; 
+        }
+        .submit-button{
+            font-size: 1.4rem;
+        }
+    }
 }
