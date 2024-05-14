@@ -26,8 +26,6 @@ function Results() {
         )
     }
 
-
-
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };

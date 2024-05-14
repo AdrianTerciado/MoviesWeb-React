@@ -1,59 +1,48 @@
 .details {
     width: 100vw;
-    height: 86vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &>.details-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100%;
-        opacity: 0.375;
+        width: 100%;
+        opacity: 1;
     }
 
     &>.movie-details {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 85%;
         height: 100%;
         display: flex;
-        align-items: center;
-        gap: 40px;
+        align-items: start;
+        justify-content: center;
 
         &>.img-card {
-            width: 35%;
-            height: 80%;
-            text-align: right;
-
-            &>.movie-img {
-                height: 100%;
-                border-radius: 10px;
-            }
+            display: none;
+            margin: 0px;
         }
 
         &>.info-movie {
-            width: 60%;
+            width: 90%;
             color: white;
-            text-align: left;
+            text-align: center;
 
             &>.title-1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             &>.title-2 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             &>.data {
                 margin-bottom: 10px;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             &>.contenedor-favoritos {
                 display: flex;
                 align-items: center;
+                justify-content: center;
 
                 &>.corazon {
                     font-size: 2rem;
@@ -65,4 +54,132 @@
     }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 667px) {
+    .details {
+        width: 100vw;
+
+        &>.details-background {
+            display: none;
+        }
+
+        &>.movie-details {
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            &>.img-card {
+                display: inline;
+                width: 35%;
+                height: 80%;
+                text-align: right;
+
+                &>.movie-img {
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            &>.info-movie {
+                width: 50%;
+                color: white;
+                text-align: left;
+
+                &>.title-1 {
+                    font-size: 2rem;
+                }
+
+                &>.title-2 {
+                    font-size: 1.5rem;
+                }
+
+                &>.data {
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                }
+
+                &>.contenedor-favoritos {
+                    display: flex;
+                    align-items: center;
+
+                    &>.corazon {
+                        font-size: 2rem;
+                        margin: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .details {
+        width: 100vw;
+        height: 86vh;
+        position: relative;
+
+        &>.details-background {
+            display: inline;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            opacity: 0.375;
+        }
+
+        &>.movie-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 85%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            &>.img-card {
+                display: inline;
+                width: 35%;
+                height: 80%;
+                text-align: right;
+
+                &>.movie-img {
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            &>.info-movie {
+                width: 60%;
+                color: white;
+                text-align: left;
+
+                &>.title-1 {
+                    font-size: 2rem;
+                }
+
+                &>.title-2 {
+                    font-size: 1.5rem;
+                }
+
+                &>.data {
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                }
+
+                &>.contenedor-favoritos {
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    &>.corazon {
+                        font-size: 2rem;
+                        margin: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
