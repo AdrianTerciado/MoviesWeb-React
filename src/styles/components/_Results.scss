@@ -1,0 +1,20 @@
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+
+    &>.results-cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .results {
+        display: flex;
+        width: 80%;
+        justify-content: center;
+    }
+}

@@ -1,33 +1,46 @@
+import { BrowserRouter } from 'react-router-dom'
+import './styles/styles.scss';
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
+import { ResultContext } from './context/ResultContext'
+import { MongoContext } from './context/MongoContext'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [result, setResult] = useState([]);
+  const [database, setDatabase] = useState([]);
+
+  const updateResult = (newResult) => {
+    setResult(newResult)
+  };
+
+  const updateDatabase = (newResult) => {
+    setDatabase(newResult)
+  };
+
+  const resultData = {
+    result,
+    updateResult
+  }
+
+  const mongoDatabase = {
+    database,
+    updateDatabase
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter >
+        <ResultContext.Provider value={resultData}>
+          <Header></Header>
+          <MongoContext.Provider value={mongoDatabase}>
+            <Main></Main>
+          </MongoContext.Provider>
+        </ResultContext.Provider>
+        <Footer></Footer>
+      </BrowserRouter >
     </>
   )
 }
